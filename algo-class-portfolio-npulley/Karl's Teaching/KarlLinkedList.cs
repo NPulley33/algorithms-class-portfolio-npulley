@@ -12,7 +12,7 @@ namespace algo_class_portfolio_npulley
         public Node<T>? Next { get; set; }
     }
 
-    public class LinkedList<T> //where T : struct
+    public class KarlLinkedList<T> //where T : struct
     {
         Node<T>? Head { get; set; }
 
@@ -99,6 +99,37 @@ namespace algo_class_portfolio_npulley
         {
             return this.Head is null;
         }
+    }
+
+    public class LLStack<T>
+    {
+        Node<T>? Tail;
+
+        public void Push(T data)
+        {
+            Node<T>? temp = this.Tail;
+
+            Node<T>? newNode = new Node<T> { Value = data, Next = temp };
+
+            this.Tail = newNode;
+        }
+
+        public void Pop()
+        {
+            if (this.Tail is not null) this.Tail = this.Tail.Next;
+        }
+
+        public T? Peek()
+        {
+            if (Tail is null) return default(T);
+            return Tail.Value;
+        }
+
+        public bool IsEmpty()
+        {
+            return this.Tail is null;
+        }
+
     }
    
     //stack:
