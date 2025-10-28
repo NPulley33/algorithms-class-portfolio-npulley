@@ -1,9 +1,7 @@
-﻿using System.Data.Entity.Migrations.Model;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Text;
 using static System.Console;
 
-namespace algo_class_portfolio_npulley.HanoiTower
+namespace HanoiTower
 {
     public class HanoiEngine
     {

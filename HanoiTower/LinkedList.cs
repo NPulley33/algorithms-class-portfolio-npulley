@@ -1,4 +1,4 @@
-﻿namespace algo_class_portfolio_npulley.HanoiTower
+﻿namespace HanoiTower
 {
     public class LinkedList<T> where T : struct
     {

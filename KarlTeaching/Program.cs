@@ -1,6 +1,6 @@
-﻿namespace algo_class_portfolio_npulley
+﻿namespace KarlTeaching
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
