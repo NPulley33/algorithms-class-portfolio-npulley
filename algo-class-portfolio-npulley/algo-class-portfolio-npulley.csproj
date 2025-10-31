@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\KarlTeaching\KarlTeaching.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Testing.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
     </None>

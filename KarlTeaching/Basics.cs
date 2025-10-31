@@ -29,10 +29,5 @@ namespace KarlTeaching
             return a;
         }
 
-        public static void FisherYatesShuffle()
-        { 
-            
-        }
-
     }
 }

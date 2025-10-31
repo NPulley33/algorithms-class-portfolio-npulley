@@ -14,7 +14,7 @@ namespace KarlTeaching
             Random rand = new Random(); 
             for (int i = arr.Length - 1; i > 0; i--)
             {
-                int randIndex = rand.Next(0, i + 1);
+                int randIndex = rand.Next(0, i);
                 T temp = arr[i];
                 arr[i] = arr[randIndex];
                 arr[randIndex] = temp;
