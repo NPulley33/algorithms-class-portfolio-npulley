@@ -8,7 +8,11 @@ namespace KarlTeaching
 {
     public static class FisherYatesShuffle
     {
-
+        /// <summary>
+        /// shuffles values in an array by random swapping
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arr"></param>
         public static void Shuffle<T>(T[] arr)
         { 
             Random rand = new Random(); 

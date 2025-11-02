@@ -11,11 +11,13 @@ namespace HanoiTower
 
         public HanoiEngine() 
         { 
+            //init towers and start game
             Tower1 = new Stack<int>();
             Tower2 = new Stack<int>();
             Tower3 = new Stack<int>();
 
             Start();
+            //ruun auto solver after game is finished to simulate a perfect game
             RunAutoSolver();
         }
 
@@ -24,6 +26,7 @@ namespace HanoiTower
             //ask how many rings player wants (limit 3-5)
             //add rings to tower 1
             
+            //making sure input is valid
             bool validInput = false;
             string input = "";
             while (!validInput)
@@ -36,7 +39,7 @@ namespace HanoiTower
                     break;
                 }
             }
-
+            //init rings based on input
             int numRings = 0;
             switch(input)
             {
@@ -59,6 +62,7 @@ namespace HanoiTower
 
         private void Run()
         {
+            //checks if every other tower is empty except the far right tower (tower 3)
             while (IsComplete() == false)
             {
                 bool validMove = false;
@@ -67,8 +71,10 @@ namespace HanoiTower
                 int from = 0;
                 int to = 0;
 
+                //makes sure you can make the move the player attempts to
                 while (validMove == false)
                 { 
+                    //get stacks from player input
                     var stacks = PickStacks();
 
                     from = stacks.from;
@@ -79,21 +85,20 @@ namespace HanoiTower
                         WriteLine("invalid move: same stack");
                         continue;
                     }
-
+                    //can automatically move to an empty tower without checking ring size
                     if (CheckEmptyTo(to))
                     {
                         validMove = true;
                         continue;
                     }
 
+                    //checks if the tower you intend to move has a ring bigger than the one you're moving
                     validMove = CheckSmaller(from, to);
                     WriteLine(validMove);
 
                     if (validMove == false) WriteLine("Invalid move: bigger onto smaller");
-                    //validMove = true;
                 }
 
-                //toStack.Push((int)fromStack.Pop()); //does not work
                 MoveDisc(from, to);
                 Display();
 
@@ -103,6 +108,11 @@ namespace HanoiTower
             ReadLine();
         }
 
+        /// <summary>
+        /// checks if the tower you intent to move a ring to is empty
+        /// </summary>
+        /// <param name="to"></param>
+        /// <returns></returns>
         private bool CheckEmptyTo(int to)
         {
             switch (to)
@@ -120,6 +130,12 @@ namespace HanoiTower
             return false;
         }
 
+        /// <summary>
+        /// checks to make sure you can move a ring to the indicated stack
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
         private bool CheckSmaller(int from, int to)
         {
             switch (from)
@@ -140,6 +156,11 @@ namespace HanoiTower
             return false;
         }
 
+        /// <summary>
+        /// move a disc from one tower to another tower
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
         private void MoveDisc(int from, int to)
         {
             switch (from)
@@ -159,6 +180,10 @@ namespace HanoiTower
             }
         }
 
+        /// <summary>
+        /// reads player input for which stack to move a ring from, and which to move it to
+        /// </summary>
+        /// <returns></returns>
         private (int from, int to) PickStacks()
         {
             string stackFrom = string.Empty;
@@ -180,12 +205,20 @@ namespace HanoiTower
             return (from, to);
         }
 
+        /// <summary>
+        /// checks if the string entered for number of rings is valid
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns> if the input was valid or not </returns>
         private bool ValidInput(string input)
         {
             return (input == "1" || input == "2" || input == "3");
         }
 
-
+        /// <summary>
+        /// adds rings to tower 1 as a set up
+        /// </summary>
+        /// <param name="numRings"> number of rings for the game </param>
         private void AddRings(int numRings)
         {
             for (int i = numRings; i > 0; i--)
@@ -194,6 +227,9 @@ namespace HanoiTower
             }
         }
 
+        /// <summary>
+        /// displays tower information on the screen
+        /// </summary>
         private void Display()
         {
             StringBuilder sb = new StringBuilder();
@@ -221,8 +257,13 @@ namespace HanoiTower
             WriteLine(sb.ToString());
         }
 
+        /// <summary>
+        /// checks if first 2 toweres are empty. If the first two towers are empty, all discs are on the leftmost tower, resulting in a win
+        /// </summary>
+        /// <returns> if Towers 1 & 2 are empty </returns>
         private bool IsComplete()
-        { 
+        {
+            //does not check if rings are in correct order as that is checked somewhere else
             if (Tower1.IsEmpty() == false) return false;
             if (Tower2.IsEmpty() == false) return false;
             return true;
@@ -275,6 +316,7 @@ namespace HanoiTower
         public HanoiAction DoStep() => (HanoiAction)steps.Dequeue();
     }
 
+    //structure to hold information about moving rings automatically
     internal struct HanoiAction
     {
         public int to;
