@@ -2,12 +2,12 @@
 
 namespace algo_class_portfolio_npulley.Data_Structure_Differences
 {
-    internal class PQNode<T>
+    internal class PQNodeArr<T>
     {
         public readonly int key;
         public readonly T value;
 
-        public PQNode(int key, T value)
+        public PQNodeArr(int key, T value)
         { 
             this.key = key;
             this.value = value;
@@ -17,12 +17,12 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
 
     public class MaxPQArray<T>
     {
-        private PQNode<T>[] tree;
+        private PQNodeArr<T>[] tree;
         int next;
 
         public MaxPQArray() 
         {
-            tree = new PQNode<T>[2];
+            tree = new PQNodeArr<T>[2];
             next = 1;
         }
 
@@ -30,14 +30,14 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
         {
             if (next >= tree.Length) Resize(tree.Length * 2);
 
-            tree[next] = new PQNode<T>(priority, element);
+            tree[next] = new PQNodeArr<T>(priority, element);
             Swim(next);
             next++;
         }
 
         public T Dequeue()
         {
-            PQNode<T> max = tree[1];
+            PQNodeArr<T> max = tree[1];
 
             next--;
             tree[1] = tree[next];
@@ -75,7 +75,7 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
             { 
                 if (tree[parentIndex].key > tree[index].key)
                 {
-                    PQNode<T> temp = tree[index];
+                    PQNodeArr<T> temp = tree[index];
                     tree[index] = tree[parentIndex];
                     tree[parentIndex] = temp;
 
@@ -128,7 +128,7 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
                     swapIndex = GetRightChildIndexForParent(index);
                 }
 
-                PQNode<T> temp = tree[index];
+                PQNodeArr<T> temp = tree[index];
                 tree[index] = tree[swapIndex];
                 tree[swapIndex] = temp;
                 index = swapIndex;
@@ -159,7 +159,7 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
 
         private void Resize(int count)
         { 
-            PQNode<T>[] newArray = new PQNode<T>[count];
+            PQNodeArr<T>[] newArray = new PQNodeArr<T>[count];
             for (int i = 0; i < tree.Length; i++)
             { 
                 if (tree[i] == null) break; //accounts for downsizing
