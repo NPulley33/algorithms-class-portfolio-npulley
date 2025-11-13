@@ -41,7 +41,7 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
 
             next--;
             tree[1] = tree[next];
-            tree[next] = null;
+            tree[next + 1] = null;
 
             Sink();
             //if usued values is <= 1/4 of total array size then resize the length of the array to 1/2 curr length
@@ -72,7 +72,7 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
             bool done = false;
 
             while (!done && index > 1)
-            { 
+            {
                 if (tree[parentIndex].key > tree[index].key)
                 {
                     PQNodeArr<T> temp = tree[index];
