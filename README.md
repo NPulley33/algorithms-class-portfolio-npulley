@@ -12,6 +12,12 @@
   - O(1) Constant time: Accessing the first element of an array. One step, constant time.
   - O(n) Find number of occurances: takes an array and a value, traverses through the entire array of length n to find how many times the value occurs in the array. Time is dependent on the size of the array.
   - O(n^2) Find number of occurances in a 2D array: takes same parameters, but searches a 2D array, worst case of length n & width n. Time is dependent on length/width of 2D array. 
+- Sorting Algorithsm:
+  - Bubble Sort: O(n^2) swaps adjacent items until the array is sorted- works from beginning to end.
+  - Insertion Sort: O(n^2) takes an element and puts it in the correct position in the sorted portion of the array- works from beginning to end. 
+  - Selection Sort: O(n^2) continually chooses the smallest element and puts it at the end of the sorted section of the array- works from beginning to end.
+  - Quick Sort: O(n log n) breaks down array into smaller arrays and swaps elements based on a pivot- divide & conquer. 
+  - Merge Sort: O(n log n) breaks down array into smallest pieces, compares halves and makes swaps, then merges sorted halves together- divide & conquer. 
 - FisherYates Shuffle: iterates through an array from end to beginning & randomly swaps elements from the beginning to the current point. 
 - LeetCode solutions: a collection of solutions to various LeetCode problems
 - other bits & bobs
