@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\algo-class-portfolio-npulley\algo-class-portfolio-npulley.csproj" />
+    <ProjectReference Include="..\CommonAlgorithms\CommonAlgorithms.csproj" />
     <ProjectReference Include="..\KarlTeaching\KarlTeaching.csproj" />
   </ItemGroup>
 

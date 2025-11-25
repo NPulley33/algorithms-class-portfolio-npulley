@@ -73,6 +73,12 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
 
             while (!done && index > 1)
             {
+                Console.WriteLine(index);
+                Console.WriteLine(tree[index]);
+                Console.WriteLine(tree[index].key);
+                Console.WriteLine(parentIndex);
+                Console.WriteLine(tree[parentIndex]);
+                Console.WriteLine(tree[parentIndex].key);
                 if (tree[parentIndex].key > tree[index].key)
                 {
                     PQNodeArr<T> temp = tree[index];

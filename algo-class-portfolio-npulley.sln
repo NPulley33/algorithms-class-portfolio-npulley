@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HanoiTower", "HanoiTower\Ha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarlTeaching", "KarlTeaching\KarlTeaching.csproj", "{66967111-B702-4726-82B2-1D81217A2228}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonAlgorithms", "CommonAlgorithms\CommonAlgorithms.csproj", "{BC4F0D23-1782-4EBF-A035-26497D3C1B54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{66967111-B702-4726-82B2-1D81217A2228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66967111-B702-4726-82B2-1D81217A2228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66967111-B702-4726-82B2-1D81217A2228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4F0D23-1782-4EBF-A035-26497D3C1B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4F0D23-1782-4EBF-A035-26497D3C1B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4F0D23-1782-4EBF-A035-26497D3C1B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4F0D23-1782-4EBF-A035-26497D3C1B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
 using algo_class_portfolio_npulley;
-using KarlTeaching;
+using CommonAlgorithms;
 
 namespace UnitTests
 {
