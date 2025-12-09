@@ -9,14 +9,19 @@ namespace algo_class_portfolio_npulley
         {
             Console.WriteLine("Hello, World!");
 
-            MaxPQArray<int> priorityQueue = new MaxPQArray<int>();
-            priorityQueue.Enqueue(1, 1);
-            priorityQueue.Enqueue(2, 2);
-            priorityQueue.Enqueue(3, 3);
-            Console.WriteLine(priorityQueue.Dequeue());
-            Console.WriteLine(priorityQueue.Dequeue());
-            Console.WriteLine(priorityQueue.Dequeue());
+            Console.WriteLine();
 
+            Graph g = new Graph(10);
+            Console.WriteLine(g.ToString());
+
+
+            g.AddEdge(1,5);
+            g.AddEdge(2,5);
+            g.AddEdge(1,8);
+            g.AddEdge(0,7);
+
+            Console.WriteLine();
+            Console.WriteLine(g.ToString());
         }
     }
 }
