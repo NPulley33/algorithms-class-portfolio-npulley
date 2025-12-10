@@ -19,22 +19,22 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
     public class BinaryTree
     {
 
-        private Node head;
+        public Node Head;
 
-        public BinaryTree(Node head) { this.head = head; }
+        public BinaryTree(int head) { this.Head = new Node(head); }
 
         public BinaryTree() { }
 
         public void Insert(int data)
         {
-            if (head == null)
+            if (Head == null)
             { 
-                head = new Node(data);
+                Head = new Node(data);
                 return;
             }
 
             bool inserted = false;
-            Node current = head;
+            Node current = Head;
 
             while (!inserted)
             {
