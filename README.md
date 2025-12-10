@@ -28,6 +28,8 @@
 - other bits & bobs
 
 ### Data Structure Comparison
+- Binary Tree: simple tree structure of Nodes which have a left and right Node child. Integer data is added to the tree based on if it is greater or less than nodes aready inserted. If less than, the node goes left, if greater than, the node goes right.
+- Graph: A set of verticies and a collection of edges denoting which verticies are connected to each other. This implementation makes use of an array of lists. The array represents the verticies, and the list represents the number of edges by storing which verticies the current vertex is connected to. 
 - Maps vs. Arrays:
   - a map is an array of buckets that uses a hash or other algorithm to determine where an element would be placed. This makes finding any particular element very fast as you know exactly where to access it.
   - Arrays store items linerally (physically in a contiguous block of memory). To find any element you have to traverse through the array.
