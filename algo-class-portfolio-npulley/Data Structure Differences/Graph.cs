@@ -27,14 +27,46 @@ namespace algo_class_portfolio_npulley.Data_Structure_Differences
             if (graph[v] == null) graph[v] = new List<int>();
             if (graph[w] == null) graph[w] = new List<int>();
 
+            if (graph[v].Contains(w) || graph[w].Contains(v)) return; 
+
             graph[v].Add(w);
             graph[w].Add(v);
         }
 
-        public int Adjacent(int v)
+        public int Adjacent(int v) => Degree(v);
+
+        public int Degree(int v) => graph[v].Count;
+
+        public int MaxDegree()
         {
-            return graph[v].Count;
+            int max = 0;
+            for (int i = 0; i < graph.Length; i++)
+            { 
+                if (graph[i].Count > max) max = graph[i].Count;
+            }
+            return max;
         }
+
+        public int AverageDegree()
+        {
+            int sum = 0;
+            for (int i = 0; i < graph.Length; i++)
+            {
+                sum += graph[i].Count;
+            }
+            return sum/graph.Length;
+        }
+
+        public int NumberOfSelfLoops()
+        {
+            int num = 0;
+            for (int i = 0; i < graph.Length; i++)
+            {
+                if (graph[i].Contains(i)) num++;
+            }
+            return num;
+        }
+
 
         public override string ToString()
         {
